@@ -42,7 +42,7 @@ class BannerWidget extends StatefulWidget {
   final IndicatorStyle indicatorStyle;
 
   ///text background color
-  final Color textBackgroundColor;
+  final Color descriptionBackgroundColor;
   final OnBannerItemClick onBannerItemClick;
   final CustomBuild build;
 
@@ -55,7 +55,7 @@ class BannerWidget extends StatefulWidget {
       this.unSelectedColor: Colors.white,
       this.onBannerItemClick,
       this.build,
-      this.textBackgroundColor: const Color(0x33000000),
+      this.descriptionBackgroundColor: const Color(0x33000000),
       this.textInfoDirect: InfoDirect.HORIZONTAL,
       this.circleRadius: 5.0,
       this.indicatorStyle: IndicatorStyle.CIRCLE,
@@ -107,7 +107,7 @@ class _BannerWidgetState extends State<BannerWidget> {
             child: IntrinsicHeight(
               child: Container(
                 padding: EdgeInsets.all(5.0),
-                color: widget.textBackgroundColor,
+                color: widget.descriptionBackgroundColor,
                 child: getBannerTextInfoWidget(),
               ),
             ),

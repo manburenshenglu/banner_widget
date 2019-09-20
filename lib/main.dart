@@ -1,5 +1,6 @@
 import 'package:banner_widget/widget/banner_widget.dart';
 import 'package:flutter/material.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 
 void main() => runApp(MyApp());
 
@@ -53,20 +54,16 @@ class _MyHomePageState extends State<MyHomePage> {
     // TODO: implement initState
     super.initState();
     BannerItem item = BannerItem.defaultBannerItem(
-        '''http://n.sinaimg.cn/news/1_img/vcg/2b0c102b/64/w1024h640/20181024/wBkr-hmuuiyw6863395.jpg''',
-        '''近日，北大全校教师干部大会刚刚召开，63岁的林建华卸任北大校长；原北大党委书记郝平接替林建华，成为新校长。曾在北京任职多年、去年担任山西高院院长的邱水平回到北大，担任党委书记。图为2018年5月4日，北京大学举行建校120周年纪念大会，时任北京大学校长林建华（右）与时任北京大学党委书记郝平（左）''');
+        'http://n.sinaimg.cn/sports/transform/0/w500h300/20190814/14d8-icapxpi4070373.jpg',
+        'LeBron James');
     data.add(item);
     item = BannerItem.defaultBannerItem(
-        '''http://n.sinaimg.cn/news/1_img/vcg/2b0c102b/99/w1024h675/20181024/FGXD-hmuuiyw6863401.jpg''',
-        '''邱水平、郝平、林建华均为“老北大人”，都曾离开北大，又重归北大任职。图为2018年5月4日，北京大学举行建校120周年纪念大会，时任北京大学党委书记郝平讲话''');
+        'http://img.mp.itc.cn/upload/20170106/a87363f5c7e548ec8022b5cadfc1c216_th.jpg',
+        'LeBron&Wade');
     data.add(item);
     item = BannerItem.defaultBannerItem(
-        '''http://n.sinaimg.cn/news/1_img/vcg/2b0c102b/107/w1024h683/20181024/kZj2-hmuuiyw6863420.jpg''',
-        '''此番卸任的林建华，亦是北大出身，历任重庆大学、浙江大学、北京大学三所“双一流”高校校长。图为2018年5月4日，北京大学举行建校120周年纪念大会，时任北京大学校长林建华讲话。''');
-    data.add(item);
-    item = BannerItem.defaultBannerItem(
-        '''http://n.sinaimg.cn/news/1_img/vcg/2b0c102b/105/w1024h681/20181024/tOiL-hmuuiyw6863462.jpg''',
-        '''书记转任校长的郝平，为十九届中央委员会候补委员。从北大毕业后留校，后离开北大，历任北京外国语大学校长、教育部副部长。2016年12月，时隔11年，郝平再回北大，出任北大党委书记。''');
+        'http://02.imgmini.eastday.com/mobile/20180328/20180328212318_1ef989a9c001edab4c94578141c10f18_2.jpeg',
+        'LeBron VS Wade');
     data.add(item);
   }
 
@@ -115,14 +112,24 @@ class _MyHomePageState extends State<MyHomePage> {
           // horizontal).
           mainAxisAlignment: MainAxisAlignment.start,
           children: <Widget>[
-            BannerWidget(data),
-            Text(
-              'You have pushed the button this many times:',
-            ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.display1,
-            ),
+            BannerWidget(data,
+                duration: 2000,
+                height: 200.0,
+                selectedColor: Colors.red,
+                unSelectedColor: Colors.white,
+                onBannerItemClick: (int position, BannerItem item) {
+                  Fluttertoast.showToast(
+                      msg: 'index=$position banner is clicked！',
+                      toastLength: Toast.LENGTH_LONG);
+                },
+                build: null,
+                descriptionBackgroundColor: const Color(0x33000000),
+                textInfoDirect: InfoDirect.HORIZONTAL,
+                circleRadius: 5.0,
+                indicatorStyle: IndicatorStyle.ELLIPTICAL,
+                ellipticalWidth: 16.0,
+                ellipticalHeight: 8.0,
+                cornerRadius: 10.0),
           ],
         ),
       ),
