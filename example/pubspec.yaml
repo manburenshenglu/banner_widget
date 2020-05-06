@@ -1,7 +1,6 @@
-name: banner_widget
-description: banner_widget is a new Flutter widget,which support you customization whatever you want.
-version: 1.0.1
-homepage: https://github.com/manburenshenglu/banner_widget
+name: example
+description: A new Flutter application.
+
 # The following defines the version and build number for your application.
 # A version number is three numbers separated by dots, like 1.2.43
 # followed by an optional build number separated by a +.
@@ -12,6 +11,7 @@ homepage: https://github.com/manburenshenglu/banner_widget
 # In iOS, build-name is used as CFBundleShortVersionString while build-number used as CFBundleVersion.
 # Read more about iOS versioning at
 # https://developer.apple.com/library/archive/documentation/General/Reference/InfoPlistKeyReference/Articles/CoreFoundationKeys.html
+version: 1.0.0+1
 
 environment:
   sdk: ">=2.1.0 <3.0.0"
@@ -23,11 +23,13 @@ dependencies:
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^0.1.2
-  transparent_image: ^1.0.0
+  fluttertoast: ^4.0.1
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
+  banner_widget:
+    path: ../
 
 
 # For information on the generic Dart part of this file, see the

@@ -1,5 +1,6 @@
 import 'package:banner_widget/widget/banner_widget.dart';
 import 'package:flutter/material.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 
 void main() => runApp(MyApp());
 
@@ -8,7 +9,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'BannerWidget Demo',
       theme: ThemeData(
         // This is the theme of your application.
         //
@@ -21,7 +22,7 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
-      home: MyHomePage(title: 'Flutter Demo Home Page'),
+      home: MyHomePage(title: 'BannerWidget Demo'),
     );
   }
 }
@@ -105,8 +106,10 @@ class _MyHomePageState extends State<MyHomePage> {
                 selectedColor: Colors.red,
                 unSelectedColor: Colors.white,
                 onBannerItemClick: (int position, BannerItem item) {
-              print('index=$position banner is clicked！');
-            },
+                  Fluttertoast.showToast(
+                      msg: 'index=$position banner is clicked！',
+                      toastLength: Toast.LENGTH_LONG);
+                },
                 build: null,
                 descriptionBackgroundColor: const Color(0x33000000),
                 textInfoDirect: InfoDirect.HORIZONTAL,

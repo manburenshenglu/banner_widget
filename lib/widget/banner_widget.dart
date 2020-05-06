@@ -161,8 +161,7 @@ class _BannerWidgetState extends State<BannerWidget> {
           Expanded(flex: 1, child: getCurrentTextInfoWidget()),
           Expanded(
               flex: 0,
-              child: Row(
-                  mainAxisSize: MainAxisSize.min, children: indicator()))
+              child: Row(mainAxisSize: MainAxisSize.min, children: indicator()))
         ],
       );
     }
